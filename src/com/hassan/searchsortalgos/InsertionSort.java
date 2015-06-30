@@ -14,7 +14,9 @@ public class InsertionSort {
 
 		printArray( sort( arr1 ) );
 		printArray( sort( arr2 ) );
-		printArray( sort( arr3 ) );
+		int[] sort = sort( arr3 );
+//		System.out.println( "---------------------------------" );
+		printArray( sort );
 		printArray( sort( arr4 ) );
 		printArray( sort( arr5 ) );
 	}
@@ -24,7 +26,7 @@ public class InsertionSort {
 		int temp, j;
 		for (int i = 1; i < result.length; i++) {
 			temp = result[i];
-			for (j = i; j >= 0 && result[j] >= result[i]; j--) {
+			for (j = i - 1; j >= 0 && result[j] > temp; j--) {
 				result[j + 1] = result[j];
 			}
 			result[j+1] = temp;
